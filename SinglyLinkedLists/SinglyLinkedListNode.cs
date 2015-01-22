@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,20 +15,14 @@ namespace SinglyLinkedLists
         private SinglyLinkedListNode next;
         public SinglyLinkedListNode Next
         {
-            get { return this.next; }
-            set {
-                if (this == value)
-                {
-                    throw new ArgumentException("Can't set Next to this");
-                }
-                this.next = value;
-            }
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
 
         private string value;
-        public string Value 
+        public string Value
         {
-            get { return value; }
+            get { throw new NotImplementedException(); }
         }
 
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
@@ -45,7 +39,7 @@ namespace SinglyLinkedLists
 
         public SinglyLinkedListNode(string value)
         {
-            this.value = value;
+            throw new NotImplementedException();
 
             // Used by the visualizer:
             allNodes.Add(this);
@@ -54,23 +48,12 @@ namespace SinglyLinkedLists
         // READ: http://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx
         public int CompareTo(Object obj)
         {
-            SinglyLinkedListNode node = obj as SinglyLinkedListNode;
-            return node == null ? 1 : this.Value.CompareTo(node.Value);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return this.CompareTo(obj) == 0;
+            throw new NotImplementedException();
         }
 
         public bool IsLast()
         {
-            return next == null;
-        }
-
-        public override string ToString()
-        {
-            return Value;
+            throw new NotImplementedException();
         }
     }
 }
