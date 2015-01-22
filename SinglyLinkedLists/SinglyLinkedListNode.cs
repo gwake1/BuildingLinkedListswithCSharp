@@ -16,7 +16,7 @@ namespace SinglyLinkedLists
         public SinglyLinkedListNode Next
         {
             get { return this.next; }
-            set { this.next = null; }
+            set { this.next = value; }
         }
 
         private string value;
