@@ -68,7 +68,7 @@ namespace SinglyLinkedLists
 
         public bool IsLast()
         {
-            return next == null;
+            return next != null ? false : true;
         }
         public override bool Equals(object obj)
         {

@@ -57,13 +57,14 @@ namespace SinglyLinkedLists
         public string ElementAt(int index)
         {
             SinglyLinkedListNode currentnode = firstNode;
-            for (int i = 0; i < index; i++)
+            while (index > 0 && currentnode != null)
             {
-                if (currentnode.IsLast())
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
+                index--;
                 currentnode = currentnode.Next;
+            }
+            if (currentnode == null)
+            {
+                throw new ArgumentOutOfRangeException();   
             }
             return currentnode.Value;
         }
