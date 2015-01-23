@@ -34,6 +34,10 @@ namespace SinglyLinkedLists
         {
             get { return value; }
         }
+        public override string ToString()
+        {
+            return Value;
+        }
 
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
         {
