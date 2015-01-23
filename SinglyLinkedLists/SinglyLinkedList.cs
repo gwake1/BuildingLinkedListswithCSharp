@@ -8,6 +8,7 @@ namespace SinglyLinkedLists
     public class SinglyLinkedList
     {
         private SinglyLinkedListNode firstNode;
+        private SinglyLinkedListNode lastNode = null;
         public SinglyLinkedList()
         {
             // NOTE: This constructor isn't necessary, once you've implemented the constructor below.
@@ -101,8 +102,16 @@ namespace SinglyLinkedLists
         // HINT 3: If you highlight code and right click, you can use the refactor menu to extract a method for you...
         public string Last()
         {
-            return null;
+            if (lastNode == null )
+	            {
+		             return null;
+	            }
+            else
+	            {
+                return lastNode.Value;
+	            }
         }
+
 
         public void Remove(string value)
         {
