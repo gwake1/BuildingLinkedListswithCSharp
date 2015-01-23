@@ -56,7 +56,16 @@ namespace SinglyLinkedLists
 
         public string ElementAt(int index)
         {
-            throw new NotImplementedException();
+            SinglyLinkedListNode currentnode = firstNode;
+            for (int i = 0; i < index; i++)
+            {
+                if (currentnode.IsLast())
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                currentnode = currentnode.Next;
+            }
+            return currentnode.Value;
         }
 
         public string First()
