@@ -16,7 +16,17 @@ namespace SinglyLinkedLists
         public SinglyLinkedListNode Next
         {
             get { return this.next; }
-            set { this.next = value; }
+            set
+            {
+                if (this == value)
+                {
+                    throw new System.ArgumentException("Can't set next equal to this!");
+                }
+                else
+                {
+                    this.next = value;
+                }
+            }
         }
 
         private string value;
