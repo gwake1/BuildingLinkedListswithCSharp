@@ -69,5 +69,17 @@ namespace SinglyLinkedLists
         {
             return next == null;
         }
+        public override bool Equals(object obj)
+        {
+            SinglyLinkedListNode comparison = obj as SinglyLinkedListNode;
+            if (comparison != null)
+            {
+                return this.Value.Equals(comparison.Value);
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
