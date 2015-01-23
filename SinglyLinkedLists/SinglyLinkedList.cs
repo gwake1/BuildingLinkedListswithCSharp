@@ -44,7 +44,12 @@ namespace SinglyLinkedLists
             }
             else
             {
-                firstNode.Next = new SinglyLinkedListNode(value);
+                SinglyLinkedListNode currentnode = firstNode;
+                while (currentnode.Next != null)
+                {
+                    currentnode = currentnode.Next;
+                }
+                currentnode.Next = new SinglyLinkedListNode(value);
             }
         }
 
