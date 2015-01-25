@@ -97,6 +97,10 @@ namespace SinglyLinkedLists
         {
             SinglyLinkedListNode currentNode = firstNode;
             int counter = 0;
+            if (firstNode == null)
+            {
+                return counter = -1;
+            }
             while (currentNode.Value != value)
             {
                 currentNode = currentNode.Next;
