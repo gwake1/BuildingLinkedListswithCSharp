@@ -132,7 +132,24 @@ namespace SinglyLinkedLists
 
         public override string ToString()
         {
-            return "{ }";
+            if (this.firstNode == null)
+            {
+                return "{ }";
+            }
+            SinglyLinkedListNode node = firstNode;
+            StringBuilder sb = new StringBuilder("{ \"");
+            while (true)
+            {
+                sb.Append(node.ToString());
+                if (node.Next == null)
+                {
+                    break;
+                }
+                sb.Append("\", \"");
+                node = node.Next;
+            }
+                sb.Append("\" }");
+            return sb.ToString();
 
         }
     }
