@@ -81,7 +81,7 @@ namespace SinglyLinkedLists
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
         public int Count()
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public string ElementAt(int index)
