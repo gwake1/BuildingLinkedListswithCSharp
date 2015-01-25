@@ -1,4 +1,4 @@
-﻿﻿﻿using System;
+﻿﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,11 +39,19 @@ namespace SinglyLinkedLists
 
         public void AddLast(string value)
         {
-            if (firstNode.Value == null)
+            if (firstNode == null)
             {
                 firstNode = new SinglyLinkedListNode(value);
             }
-            lastNode = new SinglyLinkedListNode(value);
+            else
+            {
+                SinglyLinkedListNode currentnode = firstNode;
+                while (currentnode.Next != null)
+                {
+                    currentnode = currentnode.Next;
+                }
+                currentnode.Next = new SinglyLinkedListNode(value);
+            }
         }
 
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
@@ -62,7 +70,7 @@ namespace SinglyLinkedLists
             }
             if (currentnode == null)
             {
-                throw new ArgumentOutOfRangeException();   
+                throw new ArgumentOutOfRangeException();
             }
             return currentnode.Value;
         }
@@ -94,19 +102,25 @@ namespace SinglyLinkedLists
         // HINT 3: If you highlight code and right click, you can use the refactor menu to extract a method for you...
         public string Last()
         {
-            if (lastNode == null)
-	            {
-		             return null;
-	            }
-            else
-	            {
-                    SinglyLinkedListNode node = firstNode;
-                    while (firstNode.Next != null)
-                    {
-                        firstNode = firstNode.Next;
-                    }
-                    return firstNode.Value;
-	            }
+            if (firstNode == lastNode)
+            {
+                return null;
+            }
+            SinglyLinkedListNode currentNode = firstNode;
+            while (currentNode.Next != lastNode)
+            {
+                currentNode = currentNode.Next;
+            }
+            return currentNode.Value;
+
+            //if (lastNode == null)
+            //{
+            //    return null;
+            //}
+            //else
+            //{
+            //    return lastNode.Value;
+            //}
         }
 
 
