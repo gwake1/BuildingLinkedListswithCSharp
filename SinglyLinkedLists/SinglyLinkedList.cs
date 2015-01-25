@@ -127,7 +127,7 @@ namespace SinglyLinkedLists
 
         public string[] ToArray()
         {
-            throw new NotImplementedException();
+            return new string[] { };
         }
 
         public override string ToString()
