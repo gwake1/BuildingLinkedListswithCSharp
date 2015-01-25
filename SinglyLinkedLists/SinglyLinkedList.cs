@@ -131,9 +131,14 @@ namespace SinglyLinkedLists
             {
                 return new string[] { };
             }
-            string[] foo = new string[1] { "foo" };
-            return foo;
-            
+            SinglyLinkedListNode currentNode = firstNode;
+            List<string> arrayList = new List<string> { };
+            while (currentNode.Value != null)
+            {
+                arrayList.Add(currentNode.Value);
+                currentNode = currentNode.Next;
+            }
+            return arrayList.ToArray<string>();
         }
 
         public override string ToString()
