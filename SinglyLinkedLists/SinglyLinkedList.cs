@@ -172,6 +172,10 @@ namespace SinglyLinkedLists
                 firstNode = firstNode.Next;
                 return;
             }
+            else if (this.IndexOf(value) < 0)
+            {
+                return;
+            }
             SinglyLinkedListNode currentNode = firstNode;
             while (currentNode.Next.Value != value)
             {
