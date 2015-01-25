@@ -39,19 +39,11 @@ namespace SinglyLinkedLists
 
         public void AddLast(string value)
         {
-            if (firstNode == null)
+            if (firstNode.Value == null)
             {
                 firstNode = new SinglyLinkedListNode(value);
             }
-            else
-            {
-                SinglyLinkedListNode currentnode = firstNode;
-                while (currentnode.Next != null)
-                {
-                    currentnode = currentnode.Next;
-                }
-                currentnode.Next = new SinglyLinkedListNode(value);
-            }
+            lastNode = new SinglyLinkedListNode(value);
         }
 
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
@@ -102,13 +94,18 @@ namespace SinglyLinkedLists
         // HINT 3: If you highlight code and right click, you can use the refactor menu to extract a method for you...
         public string Last()
         {
-            if (lastNode == null )
+            if (lastNode == null)
 	            {
 		             return null;
 	            }
             else
 	            {
-                return lastNode.Value;
+                    SinglyLinkedListNode node = firstNode;
+                    while (firstNode.Next != null)
+                    {
+                        firstNode = firstNode.Next;
+                    }
+                    return firstNode.Value;
 	            }
         }
 
