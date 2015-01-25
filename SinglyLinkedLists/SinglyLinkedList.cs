@@ -37,7 +37,6 @@ namespace SinglyLinkedLists
                 firstNode = new SinglyLinkedListNode(value);
             }
         }
-
         public void AddFirst(string value)
         {
             if (firstNode == null)
@@ -45,7 +44,6 @@ namespace SinglyLinkedLists
                 firstNode = new SinglyLinkedListNode(value);
             }
         }
-
         public void AddLast(string value)
         {
             if (firstNode == null)
