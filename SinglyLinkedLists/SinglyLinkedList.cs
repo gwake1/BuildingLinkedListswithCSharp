@@ -41,6 +41,10 @@ namespace SinglyLinkedLists
             while (currentNode.Value != existingValue)
             {
                 currentNode = currentNode.Next;
+                if (currentNode.IsLast() && currentNode.Value != existingValue)
+                {
+                    throw new ArgumentException();
+                }
             }
             SinglyLinkedListNode insert = new SinglyLinkedListNode(value);
             insert.Next = currentNode.Next;
