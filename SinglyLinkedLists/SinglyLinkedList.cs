@@ -42,7 +42,11 @@ namespace SinglyLinkedLists
             if (firstNode == null)
             {
                 firstNode = new SinglyLinkedListNode(value);
+                return;
             }
+            SinglyLinkedListNode addfirstnode = new SinglyLinkedListNode(value);
+            addfirstnode.Next = firstNode;
+            firstNode = addfirstnode;
         }
         public void AddLast(string value)
         {
