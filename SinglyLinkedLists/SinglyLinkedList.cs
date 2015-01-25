@@ -167,7 +167,10 @@ namespace SinglyLinkedLists
 
         public void Remove(string value)
         {
-            throw new NotImplementedException();
+            if (firstNode.Value == value)
+            {
+                firstNode = firstNode.Next;
+            }
         }
 
         public void Sort()
