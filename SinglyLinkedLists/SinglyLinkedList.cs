@@ -17,7 +17,10 @@ namespace SinglyLinkedLists
         // READ: http://msdn.microsoft.com/en-us/library/aa691335(v=vs.71).aspx
         public SinglyLinkedList(params object[] values)
         {
-            throw new NotImplementedException();
+            foreach (var item in values)
+            {
+                AddLast(item.ToString());
+            }
         }
 
         // READ: http://msdn.microsoft.com/en-us/library/6x16t2tx.aspx
@@ -29,7 +32,10 @@ namespace SinglyLinkedLists
 
         public void AddAfter(string existingValue, string value)
         {
-            throw new NotImplementedException();
+            if (firstNode == null)
+            {
+                firstNode = new SinglyLinkedListNode(value);
+            }
         }
 
         public void AddFirst(string value)
@@ -89,7 +95,14 @@ namespace SinglyLinkedLists
 
         public int IndexOf(string value)
         {
-            throw new NotImplementedException();
+            SinglyLinkedListNode currentNode = firstNode;
+            int counter = 0;
+            while (currentNode.Value != value)
+            {
+                currentNode = currentNode.Next;
+                counter++;
+            }
+            return counter;
         }
 
         public bool IsSorted()
