@@ -170,7 +170,14 @@ namespace SinglyLinkedLists
             if (firstNode.Value == value)
             {
                 firstNode = firstNode.Next;
+                return;
             }
+            SinglyLinkedListNode currentNode = firstNode;
+            while (currentNode.Next.Value != value)
+            {
+                currentNode = currentNode.Next;
+            }
+            currentNode.Next = currentNode.Next.Next;
         }
 
         public void Sort()
