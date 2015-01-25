@@ -40,7 +40,10 @@ namespace SinglyLinkedLists
 
         public void AddFirst(string value)
         {
-            throw new NotImplementedException();
+            if (firstNode == null)
+            {
+                firstNode = new SinglyLinkedListNode(value);
+            }
         }
 
         public void AddLast(string value)
