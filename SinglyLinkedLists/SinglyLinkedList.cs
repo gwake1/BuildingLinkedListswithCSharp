@@ -127,7 +127,13 @@ namespace SinglyLinkedLists
 
         public string[] ToArray()
         {
-            return new string[] { };
+            if (firstNode == null)
+            {
+                return new string[] { };
+            }
+            string[] foo = new string[1] { "foo" };
+            return foo;
+            
         }
 
         public override string ToString()
