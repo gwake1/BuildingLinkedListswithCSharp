@@ -133,9 +133,13 @@ namespace SinglyLinkedLists
             }
             SinglyLinkedListNode currentNode = firstNode;
             List<string> arrayList = new List<string> { };
-            while (currentNode.Value != null)
+            while (true)
             {
                 arrayList.Add(currentNode.Value);
+                if (currentNode.Next == null)
+                {
+                    break;    
+                }
                 currentNode = currentNode.Next;
             }
             return arrayList.ToArray<string>();
