@@ -112,15 +112,6 @@ namespace SinglyLinkedLists
                 currentNode = currentNode.Next;
             }
             return currentNode.Value;
-
-            //if (lastNode == null)
-            //{
-            //    return null;
-            //}
-            //else
-            //{
-            //    return lastNode.Value;
-            //}
         }
 
 
@@ -137,6 +128,12 @@ namespace SinglyLinkedLists
         public string[] ToArray()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return "{ }";
+
         }
     }
 }
