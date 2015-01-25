@@ -35,7 +35,16 @@ namespace SinglyLinkedLists
             if (firstNode == null)
             {
                 firstNode = new SinglyLinkedListNode(value);
+                return;
             }
+            SinglyLinkedListNode currentNode = firstNode;
+            while (currentNode.Value != existingValue)
+            {
+                currentNode = currentNode.Next;
+            }
+            SinglyLinkedListNode insert = new SinglyLinkedListNode(value);
+            insert.Next = currentNode.Next;
+            currentNode.Next = insert;
         }
         public void AddFirst(string value)
         {
