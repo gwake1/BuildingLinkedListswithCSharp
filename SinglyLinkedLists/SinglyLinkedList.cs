@@ -81,7 +81,18 @@ namespace SinglyLinkedLists
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
         public int Count()
         {
-            return 0;
+            if (firstNode == null)
+            {
+                return 0;    
+            }
+            int counter = 1;
+            SinglyLinkedListNode currentNode = firstNode;
+            while (!currentNode.IsLast())
+            {
+                currentNode = currentNode.Next;
+                counter++;
+            }
+            return counter;
         }
 
         public string ElementAt(int index)
