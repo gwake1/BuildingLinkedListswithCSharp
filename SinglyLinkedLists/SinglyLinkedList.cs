@@ -103,6 +103,10 @@ namespace SinglyLinkedLists
             }
             while (currentNode.Value != value)
             {
+                if (currentNode.Next == null)
+                {
+                    return counter = -1;
+                }
                 currentNode = currentNode.Next;
                 counter++;
             }
